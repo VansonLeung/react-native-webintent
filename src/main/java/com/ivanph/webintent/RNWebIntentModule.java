@@ -63,7 +63,7 @@ public class RNWebIntentModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void dial(String url) {
-    if (url.startsWith("tel")) {
+    if (!url.startsWith("tel")) {
         url = "tel:" + url;  
     }
     Intent intent = new Intent(Intent.ACTION_DIAL);
